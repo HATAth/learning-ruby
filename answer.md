@@ -98,4 +98,54 @@ irbとは、標準入力から対話形式でプログラムを実行できる�
 * 11の問い<br>
 `#{}` は出力時に文字列でない値を文字列に変換するメソッド `#to_s` を自動的に呼び出す。よって、その内部が数値型の2であっても文字列に変換してくれるため、エラーが生じない。
 
+12. irbで
 
+    `name = "kazuyo katsuma"`
+
+    を実行してください
+その後、irbで
+
+    `name`
+
+    を実行し、nameに"kazuyo katsuma"という文字列が代入されている事を確認してください
+
+    参考資料
+    https://www.tohoho-web.com/ruby/variables.html#local_var
+
+13. irbで
+
+    ```ruby
+    name = "kazuyo katsuma"
+    "Your name is #{name}"
+    ```
+
+    を実行し、文字列の中で変数を展開できる事を確認してください
+
+14. irbで
+    ```ruby
+    name = "kazuyo"
+    name += " katsuma"
+    puts name
+    ```
+    を実行してください。何が表示されますか？また、「+=」は何をする演算子ですか？
+
+15. 「+=」と同じ種類の演算子を3つ挙げてください
+
+    例: 「-=」
+
+    ヒント: このような演算子を自己代入演算子と呼びます
+
+## 12,13の結果
+<img width="435" alt="スクリーンショット 2023-07-07 17 32 07" src="https://github.com/HATAth/learning-ruby/assets/131443621/cda57d4c-7145-43dc-b6fe-35b3f457eebc">
+
+## 14の結果
+<img width="427" alt="スクリーンショット 2023-07-07 17 47 56" src="https://github.com/HATAth/learning-ruby/assets/131443621/8c6a7639-7a16-4c65-ba06-d21c97122223">
+
+
+* 14の問い<br>
+`+=` は、左辺の値と右辺の値の `+` の結果を左辺の変数に代入する演算子
+
+* 15の問い<br>
+1. `*=`
+2. `/=`
+3. `**=`
