@@ -47,3 +47,15 @@
 <img width="710" alt="スクリーンショット 2023-07-07 16 22 00" src="https://github.com/HATAth/learning-ruby/assets/131443621/b2317db2-fd80-408a-8be8-0342291f4299">
 
 irbとは、標準入力から対話形式でプログラムを実行できるようになるコマンドで、ターミナルでファイルを指定し、実行する必要がなくなる。
+
+6. irbを開き、四則演算が全て行える事を確認してください
+
+結果
+<img width="640" alt="スクリーンショット 2023-07-07 16 36 47" src="https://github.com/HATAth/learning-ruby/assets/131443621/9a2ed141-3ea4-407c-876b-408cfb329e62">
+
+7. 以下の計算式の答えをrubyを使って求めてください
+
+    7 + (399 * 400 + (10 / 4) / 3 - 3 * 19)
+
+結果
+<img width="578" alt="スクリーンショット 2023-07-07 16 38 54" src="https://github.com/HATAth/learning-ruby/assets/131443621/1f8ecc84-a721-48b9-ac5e-ae9ea092782c">
