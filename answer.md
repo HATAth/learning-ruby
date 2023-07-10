@@ -199,3 +199,26 @@ irbとは、標準入力から対話形式でプログラムを実行できる�
 
 * 20の問い<br>
 `<=` , `<` , `==` , `===`
+
+21. irbで「&&」演算子を、全てのオペランドの組み合わせで実行してください
+
+    「&&」演算子はどのような演算子ですか？
+
+    参考資料
+https://www.tohoho-web.com/ruby/operators.html#logical
+
+22. irbで「||」演算子を、全てのオペランドの組み合わせで実行してください
+
+    「||」演算子はどのような演算子ですか？
+
+## 21の結果
+<img width="396" alt="スクリーンショット 2023-07-10 16 35 53" src="https://github.com/HATAth/learning-ruby/assets/131443621/4e8a20e9-5338-4957-a4b4-31fc5ea09877">
+
+<img width="396" alt="スクリーンショット 2023-07-10 16 36 02" src="https://github.com/HATAth/learning-ruby/assets/131443621/6f52a1f8-5bbd-4dfe-b431-2a5ba7efc7e4">
+
+「&&」演算子は2つの条件式に対する論理演算子で、左辺、右辺両方の値がtrueの時のみtrueを返し、それ以外の場合にはfalseを返す。
+
+## 22の結果
+<img width="418" alt="スクリーンショット 2023-07-10 16 38 33" src="https://github.com/HATAth/learning-ruby/assets/131443621/a5726fa9-81c8-4d37-941d-90a0d1af9d86">
+
+「||」演算子も2つの条件式に対する論理演算子で、左辺、右辺の内、少なくとも一方がtrueである時、trueを返す。それ以外の時、falseを返す。
