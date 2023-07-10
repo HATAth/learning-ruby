@@ -222,3 +222,25 @@ https://www.tohoho-web.com/ruby/operators.html#logical
 <img width="418" alt="スクリーンショット 2023-07-10 16 38 33" src="https://github.com/HATAth/learning-ruby/assets/131443621/a5726fa9-81c8-4d37-941d-90a0d1af9d86">
 
 「||」演算子も2つの条件式に対する論理演算子で、左辺、右辺の内、少なくとも一方がtrueである時、trueを返す。それ以外の時、falseを返す。
+
+23. `30 > 10 『A』 14 < 2`
+
+    上記のコード全体を評価してtrueにする場合、『A』に入る演算子は何ですか？
+
+## 回答
+左辺の条件式はtrueだが、右辺の条件式はfalseなので、`||` を用いれば良い。
+
+(一応結果画像)
+<img width="382" alt="スクリーンショット 2023-07-10 16 58 56" src="https://github.com/HATAth/learning-ruby/assets/131443621/c51f894d-3810-4ae4-8d26-5427eb269264">
+
+24. irbで
+
+    `!true`
+
+    を実行してください<br>
+    「!」演算子は何を行いますか？
+
+## 結果
+<img width="271" alt="スクリーンショット 2023-07-10 16 59 31" src="https://github.com/HATAth/learning-ruby/assets/131443621/139625ae-18b8-4704-990a-585c4ca933eb">
+
+「!」演算子は、後ろに続く真偽値の否定を行う。つまり、その後ろの真偽値が `true` であれば、`false` に、`false` であれば、`true` に変換する。
