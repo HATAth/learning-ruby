@@ -244,3 +244,67 @@ https://www.tohoho-web.com/ruby/operators.html#logical
 <img width="271" alt="スクリーンショット 2023-07-10 16 59 31" src="https://github.com/HATAth/learning-ruby/assets/131443621/139625ae-18b8-4704-990a-585c4ca933eb">
 
 「!」演算子は、後ろに続く真偽値の否定を行う。つまり、その後ろの真偽値が `true` であれば、`false` に、`false` であれば、`true` に変換する。
+
+25. irbで以下のコードを実行してください
+    ```ruby
+    age = 19
+    if age < 20
+        puts "passed"
+    end
+    ```
+
+    今追加したifから始まる一連のコードをif式と言います。
+if式は何を行いますか?
+
+    参考資料
+https://www.tohoho-web.com/ruby/control.html#if
+
+## 結果
+<img width="355" alt="スクリーンショット 2023-07-11 16 19 06" src="https://github.com/HATAth/learning-ruby/assets/131443621/67dac7a9-5362-44b5-9c88-798def38629a">
+
+if式は、後に続く条件式の値がtrueである時、その条件式の後からendまでの処理を実行する。falseであった時は実行しない。
+
+26. 先程の課題で実行したif式の条件式の箇所のみを修正し、"passed" が出力されないようにしてください
+
+## 結果
+<img width="323" alt="スクリーンショット 2023-07-11 16 19 55" src="https://github.com/HATAth/learning-ruby/assets/131443621/fac06abc-ff54-4135-b282-1bf21d4f8ba8">
+
+if式の条件式を `age >= 20` に変更し、値がfalseとなるように変更した。
+
+27. irbで以下のコードを実行してください
+    ```ruby
+    age = 19
+    if age < 20
+      puts "passed"
+    else
+      puts "failed"
+    end
+    ```
+
+    今実行したコードの内、elseからendまでをelse節と言います。<br>
+    else節は何を行いますか?
+
+## 結果
+<img width="298" alt="スクリーンショット 2023-07-11 16 20 55" src="https://github.com/HATAth/learning-ruby/assets/131443621/7fa03e3c-3544-4df6-98e7-624a95ae4e34">
+
+else節は、if式の条件式がfalseであった時に、else節の式のみが実行されるようにする。
+
+28. irbで以下のコードを実行してください
+    ```ruby
+    age = 19
+    if age < 20
+      puts "passed"
+    elsif age == 20
+      puts "pending"
+    else
+      puts "failed"
+    end
+    ```
+
+    今実行したコードの内、elsifからelseまでをelsif節と言います。<br>
+    elsif節は何を行いますか?
+
+## 結果
+<img width="319" alt="スクリーンショット 2023-07-11 16 22 07" src="https://github.com/HATAth/learning-ruby/assets/131443621/1d6562df-4dd9-4edb-8f69-9e36716bcee4">
+
+elsif節は、if式の条件式がfalseであり、かつそのelsif節の条件式がtrueである時、そのelsif節の式を実行するようにする。
