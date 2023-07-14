@@ -308,3 +308,47 @@ else節は、if式の条件式がfalseであった時に、else節の式のみ�
 <img width="319" alt="スクリーンショット 2023-07-11 16 22 07" src="https://github.com/HATAth/learning-ruby/assets/131443621/1d6562df-4dd9-4edb-8f69-9e36716bcee4">
 
 elsif節は、if式の条件式がfalseであり、かつそのelsif節の条件式がtrueである時、そのelsif節の式を実行するようにする。
+
+29. learning-rubyディレクトリの中に exercise1.rb というファイルを作成し、以下の内容を記入してください
+    ```ruby
+    print "あなたの年齢は?: "
+    age = gets.chomp
+    puts "あなたの年齢は#{age}です"
+    ```
+    execrise1.rb を実行すると、「あなたの年齢は?: 」と聞かれるので、数字を入力してください。
+    エンターを押すと「あなたの年齢は<入力した内容>です」と表示されるはずです 
+
+##　結果
+<img width="457" alt="スクリーンショット 2023-07-11 17 16 26" src="https://github.com/HATAth/learning-ruby/assets/131443621/f70a4b30-fbf6-4c1e-96aa-cc6af4ca347a">
+
+30. あなたは顧客から遊園地の料金シュミレーターの作成を依頼されました
+exercise1.rbを編集し、料金シュミレーターを作成してください
+料金シュミレーターは入力した年齢から料金を教えてくれます
+シュミレーターは以下の仕様を満たしてください
+
+    1. 年齢が20歳以上の場合、800円
+    2. 年齢が25歳より上の場合、1000円
+    3. 年齢が60歳の場合、10円
+    4. それ以外は200円
+
+## プログラム
+```ruby
+print "あなたの年齢は？:"
+age = gets.chomp
+age = age.to_i
+
+if age == 60
+    fee = 10
+elsif age > 25
+    fee = 1000
+elsif age >= 20
+    fee = 800
+else
+    fee = 200
+end
+
+puts "あなたの料金は#{fee}円です"
+```
+
+## 結果
+<img width="474" alt="スクリーンショット 2023-07-14 16 14 30" src="https://github.com/HATAth/learning-ruby/assets/131443621/d99ccc4d-917c-438d-85cc-5b2bf517de13">
