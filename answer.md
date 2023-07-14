@@ -427,3 +427,59 @@ end
 ```
 ## 結果
 <img width="514" alt="スクリーンショット 2023-07-14 17 01 11" src="https://github.com/HATAth/learning-ruby/assets/131443621/366c3f48-91e9-420b-894c-d93c830f8061">
+
+35. irbで以下のコードを実行してください
+    ```ruby
+    ["banana", "orange", "apple", "grape"]
+    ```
+
+    このような複数の値を一纏めに扱う値を配列と呼びます
+
+    配列の一番目の要素("banana")を取得する方法を調べて実行してください
+
+    参考資料
+https://www.tohoho-web.com/ruby/array.html#array
+
+## 結果
+<img width="538" alt="スクリーンショット 2023-07-14 17 29 18" src="https://github.com/HATAth/learning-ruby/assets/131443621/2bc19999-bce9-4884-8a67-c73a8cbd64c0">
+
+36. ["banana", "orange", "apple", "grape"]
+
+    上記の配列の要素数を取得する方法を調べて実行してください
+
+## 結果
+<img width="571" alt="スクリーンショット 2023-07-14 17 31 39" src="https://github.com/HATAth/learning-ruby/assets/131443621/56819f01-93d4-401c-8236-a2249d915656">
+
+37. 
+    ```ruby
+    fruits = ["banana", "orange", "apple", "grape"]
+    ```
+
+    上記のコードを実行してください<br>
+    変数fruitsには配列が格納されています<br>
+    この配列の2番目の要素を「peach」に変更してください
+
+## 結果
+<img width="603" alt="スクリーンショット 2023-07-14 17 33 55" src="https://github.com/HATAth/learning-ruby/assets/131443621/24090202-54d9-405d-aca4-4421aa13d36e">
+
+38. 
+    ```ruby
+    fruits = ["banana", "orange", "apple", "grape"]
+    ```
+
+    上記のコードを実行してください<br>
+    この配列の3番目の要素を削除してください
+
+## 結果
+<img width="593" alt="スクリーンショット 2023-07-14 17 36 04" src="https://github.com/HATAth/learning-ruby/assets/131443621/20263905-e0cd-4704-ba2b-b17a1b0b678c">
+
+39. 
+    ```ruby
+    fruits = ["banana", "orange", "apple", "grape"]
+    ```
+
+    上記のコードを実行してください<br>
+    この配列に「cherry」を追加してください
+
+## 結果
+<img width="611" alt="スクリーンショット 2023-07-14 17 38 34" src="https://github.com/HATAth/learning-ruby/assets/131443621/d8619a30-d1bc-44eb-a904-4f56890ec62c">
