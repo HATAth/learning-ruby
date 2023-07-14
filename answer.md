@@ -352,3 +352,40 @@ puts "あなたの料金は#{fee}円です"
 
 ## 結果
 <img width="474" alt="スクリーンショット 2023-07-14 16 14 30" src="https://github.com/HATAth/learning-ruby/assets/131443621/d99ccc4d-917c-438d-85cc-5b2bf517de13">
+
+31. exercise1.rbを編集し、料金シュミレーターがクーポンの有無も考慮するように修正してください
+
+    クーポンがあれば料金を200円引きにしてください
+
+## プログラム
+```ruby
+print "あなたの年齢は？:"
+age = gets.chomp
+age = age.to_i
+
+print "クーポンはありますか？ (y/n) :"
+coupon = gets.chomp
+if(coupon == "y")
+    discount = 200
+else
+    discount = 0
+end
+
+if age == 60
+    fee = 10
+elsif age > 25
+    fee = 1000
+elsif age >= 20
+    fee = 800
+else
+    fee = 200
+end
+
+fee -= discount
+fee = [0, fee].max  #負の値ならば0円にする
+
+puts "あなたの料金は#{fee}円です"
+```
+
+## 結果
+<img width="517" alt="スクリーンショット 2023-07-14 16 31 27" src="https://github.com/HATAth/learning-ruby/assets/131443621/4927b42f-68a6-498e-b964-96f8358fddb8">
