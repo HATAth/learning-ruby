@@ -389,3 +389,41 @@ puts "あなたの料金は#{fee}円です"
 
 ## 結果
 <img width="517" alt="スクリーンショット 2023-07-14 16 31 27" src="https://github.com/HATAth/learning-ruby/assets/131443621/4927b42f-68a6-498e-b964-96f8358fddb8">
+
+32. irbで以下のコードを実行してください
+    ```ruby
+    def say_hello(name)
+      puts "Hello, #{name}"
+    end
+    say_hello("Matz")
+    ```
+    参考資料
+    https://www.tohoho-web.com/ruby/function.html#def
+
+## 結果
+<img width="475" alt="スクリーンショット 2023-07-14 16 40 03" src="https://github.com/HATAth/learning-ruby/assets/131443621/ce38a9f5-8c0f-4f22-adb3-57b7b4ba40bb">
+
+33. 数値を4つ受け取り、それらの合計を画面に出力するメソッドを定義して下さい
+
+## プログラム
+```ruby
+def sumFourNum (x1, x2, x3, x4)
+    sum = x1 + x2 + x3 + x4
+    puts "#{sum}"
+end
+```
+
+## 結果
+<img width="491" alt="スクリーンショット 2023-07-14 16 44 23" src="https://github.com/HATAth/learning-ruby/assets/131443621/8973545e-efe2-4140-8f1e-75f23e9acb51">
+
+34. 数値を4つ受け取り、それらの平均を戻り値として返すメソッドを定義して下さい
+
+## プログラム
+```ruby
+def meanFourNum(x1, x2, x3, x4)
+    mean = (x1 + x2 + x3 + x4) / 4.0
+    return mean
+end
+```
+## 結果
+<img width="514" alt="スクリーンショット 2023-07-14 17 01 11" src="https://github.com/HATAth/learning-ruby/assets/131443621/366c3f48-91e9-420b-894c-d93c830f8061">
