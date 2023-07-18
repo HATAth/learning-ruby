@@ -584,3 +584,28 @@ size,もしくはlengthメソッドを用いると以下のようにハッシュ
 ## 結果
 <img width="799" alt="スクリーンショット 2023-07-18 16 59 45" src="https://github.com/HATAth/learning-ruby/assets/131443621/7bf04f8a-c140-4764-842d-2b1452c943ff">
 
+48. ```ruby
+    fruits = {"banana" => 300, "orange" => 200, "apple" => 400, "grape" => 0}
+    ```
+    上記のコードを実行してください<br>
+    このハッシュに「cherry => 99」を追加してください
+
+## 結果
+<img width="820" alt="スクリーンショット 2023-07-18 17 21 19" src="https://github.com/HATAth/learning-ruby/assets/131443621/2b5e116e-d8c9-4b7a-bea7-043cbf2add72">
+
+49. ```ruby
+    {"banana" => 300, "orange" => 200, "apple" => 400, "grape" => 0}
+    ```
+    上記のハッシュのキー一覧の配列を取得する方法を調べて説明してください
+
+A. Hashクラスに用意されている `keys` メソッドを用いると、各キーを要素とする配列を返す。
+<img width="817" alt="スクリーンショット 2023-07-18 17 24 22" src="https://github.com/HATAth/learning-ruby/assets/131443621/3de50264-543e-45e3-a655-a051501e1074">
+
+50. ```ruby
+    {"banana" => 300, "orange" => 200, "apple" => 400, "grape" => 0}
+    ```
+    上記のハッシュの値一覧の配列を取得する方法を調
+    べて説明してください
+
+A. 同様に、Hashクラスに用意されている ` values` メソッドを用いると、各ハッシュ値を要素とする配列を返す。
+<img width="844" alt="スクリーンショット 2023-07-18 17 28 10" src="https://github.com/HATAth/learning-ruby/assets/131443621/1c98e782-a7f8-492a-a249-d38ef132c6e4">
