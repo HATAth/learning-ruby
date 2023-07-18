@@ -483,3 +483,44 @@ https://www.tohoho-web.com/ruby/array.html#array
 
 ## 結果
 <img width="611" alt="スクリーンショット 2023-07-14 17 38 34" src="https://github.com/HATAth/learning-ruby/assets/131443621/d8619a30-d1bc-44eb-a904-4f56890ec62c">
+
+40. 下記のコードを実行してください
+    ```ruby
+    fruits = ["banana", "orange", "apple", "grape"]
+    fruits.each do |fruit|
+      puts "My favorite fruit is #{fruit}"
+    end
+    ```
+
+    doからendまでのコードを「ブロック」と呼びます
+
+    eachメソッドは何を行うメソッドか調べて自分の言葉で説明して下さい<br>
+    また、ブロックとは何か調べて自分の言葉で説明して下さい
+
+## 結果
+<img width="533" alt="スクリーンショット 2023-07-14 17 44 46" src="https://github.com/HATAth/learning-ruby/assets/131443621/d21c9286-049d-4ac9-9216-f3a100930e32">
+
+eachメソッドは与えられた配列の各要素を参照しながらブロックの処理を行う。その戻り値は元の配列のままである。 <br>
+ブロックとはdo ... end や {...} で囲まれたコードのまとまりで、メソッドの引数として渡され、処理される。
+
+41. 下記のコードを実行してください
+    ```ruby
+    fruits = ["banana", "orange", "apple", "grape"]
+    fruits = fruits.map do |fruit|
+      "My favorite fruit is #{fruit}"
+    end
+    fruits.each do |fruit|
+      puts fruits
+    end
+    ```
+
+    mapメソッドは何を行うメソッドか調べて自分の言葉で説明して下さい
+
+## 結果
+<img width="568" alt="スクリーンショット 2023-07-18 16 08 03" src="https://github.com/HATAth/learning-ruby/assets/131443621/ea861185-f87c-446f-b02e-b336e4627a29">
+
+mapメソッドは与えられた配列の各要素を参照しながらブロックの処理を行う。その戻り値は処理された後の配列を返す。
+
+42. mapメソッドとeachメソッドの違いを説明してください。
+
+2つの違いはその戻り値が処理前の配列か、処理後の結果の配列か、というものであるため、単に配列の要素を繰り返したい時には `each` 、繰り返し処理をした結果を利用したいときは `map` を使う、といった使い分けがされている。
