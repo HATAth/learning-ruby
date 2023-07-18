@@ -580,3 +580,7 @@ size,もしくはlengthメソッドを用いると以下のようにハッシュ
     上記のコードを実行してください<br>
     変数fruitsにはハッシュが格納されています<br>
     このハッシュの「grape」の値を「1000」に変更してください
+
+## 結果
+<img width="799" alt="スクリーンショット 2023-07-18 16 59 45" src="https://github.com/HATAth/learning-ruby/assets/131443621/7bf04f8a-c140-4764-842d-2b1452c943ff">
+
