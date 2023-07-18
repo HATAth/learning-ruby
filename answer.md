@@ -550,3 +550,33 @@ selectメソッドは与えられた配列の各要素を参照していき、�
 
 concatメソッドは指定した対象のオブジェクトの末尾に引数のオブジェクトを結合させる。<br>
 そして、その指定されたオブジェクトはその結合された値になる。
+
+45. irbで以下のコードを実行してください
+    ```ruby
+    {"banana" => 300, "orange" => 200, "apple" => 400, "grape" => 0}
+    ```
+    このようなキーと、それに対応する値の対応関係を持つ値をハッシュと呼びます<br>
+    例: "banana"がキーで300が値
+
+    ハッシュの「orange」に対応する値を取得する方法を調べて実行してください
+
+    参考資料<br>
+    https://www.tohoho-web.com/ruby/array.html#hash
+
+## 結果
+<img width="825" alt="スクリーンショット 2023-07-18 16 52 42" src="https://github.com/HATAth/learning-ruby/assets/131443621/30c8978d-fad4-40c7-adb3-7e9de6b4f9d5">
+
+46. ```ruby 
+    {"banana" => 300, "orange" => 200, "apple" => 400, "grape" => 0}
+    ```
+    上記のハッシュのサイズを取得する方法を調べて説明してください
+
+size,もしくはlengthメソッドを用いると以下のようにハッシュのサイズを得る。
+<img width="757" alt="スクリーンショット 2023-07-18 16 55 50" src="https://github.com/HATAth/learning-ruby/assets/131443621/cf0a0fe6-6b2f-4274-a815-223dbab74a72">
+
+47. ```ruby
+    fruits = {"banana" => 300, "orange" => 200, "apple" => 400, "grape" => 0}
+    ```
+    上記のコードを実行してください<br>
+    変数fruitsにはハッシュが格納されています<br>
+    このハッシュの「grape」の値を「1000」に変更してください
