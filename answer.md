@@ -609,3 +609,71 @@ A. Hashクラスに用意されている `keys` メソッドを用いると、�
 
 A. 同様に、Hashクラスに用意されている ` values` メソッドを用いると、各ハッシュ値を要素とする配列を返す。
 <img width="844" alt="スクリーンショット 2023-07-18 17 28 10" src="https://github.com/HATAth/learning-ruby/assets/131443621/1c98e782-a7f8-492a-a249-d38ef132c6e4">
+
+51. learning-rubyディレクトリの中に exercise2.rb というファイルを作成し、以下の仕様を満たすメソッドを作成してください
+
+    メソッド名はfizzbuzz<br>
+    fizzbuzzは一つの数値を引数として取る(以降この引数はnと呼ぶ)<br>
+    fizzbuzzは1からnまでの数字を順に画面に出力していく<br>
+    出力する数字が3の倍数であれば、その数字の代わりにfizzと出力する<br>
+    出力する数字が5の倍数であれば、その数字の代わりにbuzzと出力する<br>
+    出力する数字が15の倍数であれば、その数字の代わりにfizzbuzzと出力する<br>
+
+    例<br>
+    fizzbuzz 20<br>
+    上記のコードを実行した場合の出力は以下の様になる<br>
+    1<br>
+    2<br>
+    fizz<br>
+    4      <br>
+    buzz<br>
+    fizz<br>
+    7<br>
+    8<br>
+    fizz<br>
+    buzz<br>
+    11<br>
+    fizz<br>
+    13<br>
+    14<br>
+    fizzbuzz<br>
+    16<br>
+    17<br>
+    fizz<br>
+    19<br>
+    buzz<br>
+
+    fizzbuzz 0<br>
+    上記の場合は何も出力されない
+
+## プログラム
+```ruby
+def fizzbuzz(n)
+    for i in 1..n do
+        output = ""
+        if(i % 3 == 0)
+            output += "fizz"
+        end
+        if(i % 5 == 0)
+            output += "buzz"
+        end
+        if(output == "")
+            puts "#{i}"
+        else
+            puts "#{output}"
+        end
+         
+    end
+end
+
+print "整数値を入力してください"
+arg = gets.chomp
+arg = arg.to_i
+fizzbuzz(arg)
+```
+
+## 結果
+<img width="502" alt="スクリーンショット 2023-07-18 17 52 23" src="https://github.com/HATAth/learning-ruby/assets/131443621/56c47f14-856b-4dd2-aa56-e72ef8ce31ee">
+
+引数が0の場合
+<img width="453" alt="スクリーンショット 2023-07-18 17 52 31" src="https://github.com/HATAth/learning-ruby/assets/131443621/49a4eda6-c92f-4b5c-9bd3-ddf8b8f2d262">
