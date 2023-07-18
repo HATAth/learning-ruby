@@ -524,3 +524,29 @@ mapメソッドは与えられた配列の各要素を参照しながらブロ�
 42. mapメソッドとeachメソッドの違いを説明してください。
 
 2つの違いはその戻り値が処理前の配列か、処理後の結果の配列か、というものであるため、単に配列の要素を繰り返したい時には `each` 、繰り返し処理をした結果を利用したいときは `map` を使う、といった使い分けがされている。
+
+43. 下記のコードを実行してください
+    ```ruby
+    fruits = ["banana", "orange", "apple", "grape"]
+    puts fruits.select { |fruit| fruit != "banana" }
+    ```
+    波括弧で囲んだコードもブロックです<br>
+    selectメソッドは何を行うメソッドか調べて自分の言葉で説明して下さい
+
+## 結果
+<img width="557" alt="スクリーンショット 2023-07-18 16 27 32" src="https://github.com/HATAth/learning-ruby/assets/131443621/ddd2f535-9cda-4623-94e1-1585c505ccde">
+
+selectメソッドは与えられた配列の各要素を参照していき、ブロックの真偽値が真である要素を全て含んだ配列を返す。
+
+44. 下記のコードを実行してください
+    ```ruby
+    fruits = ["banana", "orange", "apple", "grape"]
+    puts fruits.concat(["strawberry", "pineapple"])
+    ```
+    concatメソッドは何を行うメソッドか調べて自分の言葉で説明して下さい
+ 
+## 結果
+<img width="581" alt="スクリーンショット 2023-07-18 16 34 13" src="https://github.com/HATAth/learning-ruby/assets/131443621/ec43c0d0-7bb6-4874-9347-bd042f7d7b14">
+
+concatメソッドは指定した対象のオブジェクトの末尾に引数のオブジェクトを結合させる。<br>
+そして、その指定されたオブジェクトはその結合された値になる。
