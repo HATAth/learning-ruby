@@ -865,3 +865,116 @@ yamada.greet
 ## 結果
 <img width="423" alt="スクリーンショット 2023-07-20 15 59 52" src="https://github.com/HATAth/learning-ruby/assets/131443621/c9204cce-6071-4fe0-898e-a0b62a38baf3">
 
+60. インスタンスメソッドとは何か説明してください<br>
+    また、先程のHumanクラスにインスタンスメソッドを定義して下さい
+
+A.インスタンスが使用できるメソッドで、定義されたクラスから生成されたインスタンスからしか呼び出せない。<br>
+主にインスタンス変数などの、インスタンスごとの個別の情報を用いた処理に使われる。
+
+以下はHumanクラスに、引数で指定した回数分名前を繰り返し表示するインスタンスメソッド、`repeatName` メソッドを追加したものである。
+```ruby
+class Human
+  attr_accessor :name
+  def initialize(name)
+     @name = name
+  end
+
+  def greet
+    puts "こんにちは。私の名前は#{@name}です"
+  end
+
+  def repeatName(count)
+    for i in 1..count
+      puts "#{@name}"
+    end
+  end
+end
+```
+
+61. 先程のHumanクラスに定義されている initialize メソッドはイニシャライザと呼ばれる特殊なインスタンスメソッドです
+
+    イニシャライザについて調べて、それは何か説明してください<br>
+    また、Humanクラスのイニシャライザが、引数として名前に加えて年齢も取るようにし、それを@age に代入するように修正してください
+
+## プログラム
+```ruby
+class Human
+  attr_accessor :name, :age
+  def initialize(name, age)
+     @name = name
+     @age = age
+  end
+
+  def greet
+    puts "こんにちは。私の名前は#{@name}です"
+  end
+end
+```
+
+イニシャライザとはクラスからオブジェクトが生成された時に自動で実行されるメソッドである。<br>
+つまり、`new` メソッドが実行された際、一度だけ `initialize` メソッドが呼び出され、`new` メソッドの引数が　`initialize` メソッドの引数に渡される。<br>
+主にクラスの初期化として使われる。
+
+62. クラスメソッドとは何か説明してください<br>
+    また、先程のHumanクラスにクラスメソッドを定義して下さい
+
+A. クラスメソッドとは、クラスから直接呼び出せるメソッド。自身のオブジェクトに関して処理を行っていたインスタンスメソッドに対して、クラスメソッドはクラス全体に関わるデータの変更、参照を行う。
+
+以下は年齢が0歳のインスタンスを生成する `addBaby` メソッド、年齢が0歳のインスタンスの個数を表示する `countBaby`  メソッドを追加した `Human` クラスである。
+
+```ruby
+class Human
+  attr_accessor :name, :age
+  @@babyNum = 0 #クラス変数
+
+  def self.addBaby(name)
+    @@babyNum += 1
+    new(name, 0)
+  end
+
+  def self.countBaby
+    puts @@babyNum
+  end
+
+  def initialize(name, age)
+     @name = name
+     @age = age
+  end
+
+  def greet
+    puts "こんにちは。私の名前は#{@name}です。#{@age}歳です。"
+  end
+end
+```
+
+63. Humanクラスを継承したSuperHumanクラスを実装してください<br>
+    SuperHumanクラスから作成したオブジェクトはgreetメソッドを持っていますか？理由も含めて説明してください
+
+    参考資料
+    https://www.javadrive.jp/ruby/inherit/index1.html<br>
+    https://ja.wikibooks.org/wiki/Ruby#%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%AE%E7%B6%99%E6%89%BF
+
+## プログラム
+```ruby
+class Human
+  attr_accessor :name, :age
+
+  def initialize(name, age)
+     @name = name
+     @age = age
+  end
+
+  def greet
+    puts "こんにちは。私の名前は#{@name}です。#{@age}歳です。"
+  end
+end
+
+class SuperHuman < Human
+  def sHuman
+    puts "I am a superhuman."
+  end
+end
+```
+クラスを継承すると、継承元のクラス、親クラスで定義されたメソッドも継承されたクラス、子クラスで利用できる。<br>
+よって、`Human` クラスで定義された `greet` メソッドは継承された `SuperHuman`
+ クラスでも利用できるため、 `greet` メソッドを持っている。
