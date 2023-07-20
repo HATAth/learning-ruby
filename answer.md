@@ -768,5 +768,100 @@ taro.bowwow
 
 変数 `years` が宣言されていないと表示される。しかし、`@name` に関するエラーは表示されていない。この事より、ローカル変数は使うことができなかったが、インスタンス変数は `initial` メソッドの外でオブジェクト内であれば使うことが出来ることがわかる。
 
+57. オブジェクトの外部からインスタンス変数を参照するには「ゲッター」が必要です<br>
+    先程のHumanクラスの@nameにゲッターを定義してください
 
+    参考資料
+    http://taustation.com/ruby-class-getter-setter/
+
+## プログラム
+```ruby
+class Human
+  def initialize(name)
+     @name = name
+  end
+
+  def greet
+    puts "こんにちは。私の名前は#{@name}です"
+  end
+
+  def name
+    puts ">>>reading name" #確認用の文章。この式は無くても問題なく動作する。
+    @name 
+  end
+end
+
+#確認用に一応
+yamada = Human.new("山田")
+yamadaName = yamada.name
+puts "#{yamadaName}"
+```
+
+## 結果
+<img width="428" alt="スクリーンショット 2023-07-20 15 45 14" src="https://github.com/HATAth/learning-ruby/assets/131443621/69562b9d-4527-4ae0-af87-79f41cbcebb8">
+
+58. オブジェクトの外部からインスタンス変数に値を代入するには「セッター」が必要です<br>
+    先程のHumanクラスの@nameにセッターを定義してください
+
+    参考資料
+    http://taustation.com/ruby-class-getter-setter/
+
+## プログラム
+```ruby
+class Human
+  def initialize(name)
+     @name = name
+  end
+
+  def greet
+    puts "こんにちは。私の名前は#{@name}です"
+  end
+
+  def name
+    puts ">>>reading name" #確認用の文章。この式は無くても問題なく動作する。
+    @name 
+  end
+
+  def name=(val)
+    puts ">>>assigning prperty as '#{val}'" #同様に確認用の文章
+    @name = val
+  end
+end
+
+#確認用に一応
+yamada = Human.new("山田")
+yamadaName = yamada.name=("YAMADA")
+puts "#{yamadaName}"
+yamada.greet
+```
+
+## 結果
+<img width="434" alt="スクリーンショット 2023-07-20 15 52 50" src="https://github.com/HATAth/learning-ruby/assets/131443621/2b2502ec-b1cd-4304-ab42-fb9460527bb4">
+
+59. ゲッターとセッターを定義する簡単な方法として「attr_accessor」があります。<br>
+    attr_accessorを利用してゲッターとセッターを定義してください
+
+## プログラム
+```ruby
+class Human
+  attr_accessor :name
+  def initialize(name)
+     @name = name
+  end
+
+  def greet
+    puts "こんにちは。私の名前は#{@name}です"
+  end
+end
+
+#確認用に一応
+yamada = Human.new("山田")
+yamadaName = yamada.name
+puts "#{yamadaName}"
+yamadaName = yamada.name=("YAMADA")
+yamada.greet
+```
+
+## 結果
+<img width="423" alt="スクリーンショット 2023-07-20 15 59 52" src="https://github.com/HATAth/learning-ruby/assets/131443621/c9204cce-6071-4fe0-898e-a0b62a38baf3">
 
