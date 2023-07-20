@@ -676,4 +676,64 @@ fizzbuzz(arg)
 <img width="502" alt="スクリーンショット 2023-07-18 17 52 23" src="https://github.com/HATAth/learning-ruby/assets/131443621/56c47f14-856b-4dd2-aa56-e72ef8ce31ee">
 
 引数が0の場合
+
 <img width="453" alt="スクリーンショット 2023-07-18 17 52 31" src="https://github.com/HATAth/learning-ruby/assets/131443621/49a4eda6-c92f-4b5c-9bd3-ddf8b8f2d262">
+
+52. irbで以下のコードを実行してクラスを定義してください
+    ```ruby
+    class Human
+      def initialize(name)
+         @name = name
+      end
+
+      def greet
+        puts "こんにちは。私の名前は#{@name}です"
+      end
+    end
+    ```
+    クラスについては参考資料を参照してください
+
+    参考資料<br>
+    https://ja.wikibooks.org/wiki/Ruby#%E3%82%AF%E3%83%A9%E3%82%B9<br>
+    https://www.tohoho-web.com/ruby/class.html#class
+
+## 結果
+<img width="568" alt="スクリーンショット 2023-07-20 14 09 05" src="https://github.com/HATAth/learning-ruby/assets/131443621/09bb3794-5091-40e4-a169-876d7dd96a6f">
+
+53. irbで以下のコードを実行し、先程の課題で定義したクラスからオブジェクトを作成してください
+    ```ruby
+    yamada = Human.new("山田")
+    ```
+    クラスとは何ですか？<br>
+    また、オブジェクトとは何ですか？
+
+    参考資料<br>
+    https://ja.wikibooks.org/wiki/Ruby#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88
+
+    ヒント<br>
+    Humanクラスから作成したオブジェクトは「人間」を表すデータです<br>
+    このデータは「name」という属性と「greet」という操作が一纏めになっているデータです
+
+## 結果
+<img width="421" alt="スクリーンショット 2023-07-20 14 18 59" src="https://github.com/HATAth/learning-ruby/assets/131443621/df149b05-f0bc-4249-a4ff-091cd2ff3828">
+
+クラスとは変数やメソッドが記述されたオブジェクトの設計図のようなもので、これによりオブジェクトは生成される。<br>
+オブジェクトとは、そのクラスから生成されクラスで定義されたメソッド、変数などを持つデータである。そのオブジェクトは1つのクラスに対し複数個宣言できる。
+
+54. 犬を表すクラスを作成してください<br>
+    犬は名前を持ち、吠えます
+
+## プログラム
+```ruby
+class Dog
+  def initialize(name)
+    @name = name
+  end
+
+  def bowwow
+    puts "ワンワン"
+  end
+end
+```
+
+
