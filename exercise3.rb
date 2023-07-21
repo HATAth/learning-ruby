@@ -18,9 +18,21 @@ class Number
     end
 end
 
+class MyNumber < Number
+    def ultimate_add(instance)
+        newNum = @num + instance.num + 999
+        Number.new(newNum)
+    end
+
+    def clear
+        @num = 0
+    end
+end
+
 a = Number.new(3)
-b = Number.new(5)
-c = a.add(b)
-d = b.sub(a)
-puts c.num 
-puts d.num
+b = MyNumber.new(5)
+c = MyNumber.new(10)
+d = c.ultimate_add(a)
+b.clear
+puts d.num 
+puts b.num
