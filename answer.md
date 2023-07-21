@@ -1106,3 +1106,34 @@ puts b.num
     Base64エンコードとは何ですか？
 
 A. asciiコードだけでは扱えない文字、画像ファイルなどを扱うために用いられたエンコード方式の１つ。base64エンコードは、そのような全てのデータをasciiコードの文字列に変換し、効率的な、安全な送受信などを可能にする。
+
+68. 適当な標準ライブラリを require し、それを実際に使ってみてください
+
+    参考資料
+    https://docs.ruby-lang.org/ja/3.1/library/index.html
+
+## プログラム
+```ruby
+require "prime"
+
+for i in 1..50
+  if i.prime?
+    puts i     #素数なら表示
+  end
+end
+```
+
+## 結果
+<img width="499" alt="スクリーンショット 2023-07-21 17 06 10" src="https://github.com/HATAth/learning-ruby/assets/131443621/2baefce3-0bf5-438a-84b2-cfec361120e6">
+
+69. 標準ライブラリはruby自体に付属しているライブラリなので、reuqire するだけで使用可能です<br>
+    rubyに付属していない外部ライブラリ（gemと呼ばれます）を使用するにはライブラリのインストールが必要です<br>
+    以下のコマンドをターミナルで実行し、 colorize をインストールしてください
+
+    `gem install colorize`
+
+    irbで colorize を requireし、  puts "This is blue".colorize(:green) を実行してください。出力される文字列の色が緑になっている事を確認してください<br>
+    他の使用可能な色は String.colors を実行して確認できます
+
+## 結果
+<img width="500" alt="スクリーンショット 2023-07-21 17 11 31" src="https://github.com/HATAth/learning-ruby/assets/131443621/04b63d4b-dc11-47aa-9d69-ff2b71b1f656">
