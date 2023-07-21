@@ -977,4 +977,60 @@ end
 ```
 クラスを継承すると、継承元のクラス、親クラスで定義されたメソッドも継承されたクラス、子クラスで利用できる。<br>
 よって、`Human` クラスで定義された `greet` メソッドは継承された `SuperHuman`
- クラスでも利用できるため、 `greet` メソッドを持っている。
+クラスでも利用できるため、 `greet` メソッドを持っている。
+
+64. learning-rubyディレクトリの中に exercise3.rb というファイルを作成し、以下の仕様を満たすメソッドを作成してください
+以下の仕様を満たすNumberクラスを実装してください
+
+    仕様1 <br>
+    Numberクラスのイニシャライザは 引数として数値を受け取り、それを @num に代入します
+
+    仕様2 <br>
+    Numberクラスは @num のゲッターが定義されています
+
+    仕様3<br>
+    Numberクラスは以下のインスタンスメソッドを持ちます
+
+    addメソッド<br>
+    このメソッドは引数としてNumberクラスのインスタンスを受け取ります<br>
+    返り値は「自身の@num」 と「引数のインスタンスの@num」を足した値を@numに持つ、新しいNumberクラスのインスタンスを返します<br>
+    使用例<br>
+    a = Num.new(3)<br>
+    b = Num.new(5)<br>
+    c = a.add(b)<br>
+
+    subメソッド<br>
+    addの引き算バージョンです
+
+## プログラム
+```ruby
+class Number
+    def initialize(num)
+        @num = num
+    end
+
+    def num
+        @num
+    end
+
+    def add(instance)
+        newNum = @num + instance.num
+        Number.new(newNum)
+    end
+
+    def sub(instance)
+        newNum = @num - instance.num
+        Number.new(newNum)
+    end
+end
+
+a = Number.new(3)
+b = Number.new(5)
+c = a.add(b)
+d = b.sub(a)　
+puts c.num 
+puts d.num
+```
+
+## 結果
+<img width="458" alt="スクリーンショット 2023-07-21 16 02 34" src="https://github.com/HATAth/learning-ruby/assets/131443621/b8f5e8fe-5d86-437f-98c4-4b28c20b20e7">
