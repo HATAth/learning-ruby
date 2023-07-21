@@ -1034,3 +1034,60 @@ puts d.num
 
 ## 結果
 <img width="458" alt="スクリーンショット 2023-07-21 16 02 34" src="https://github.com/HATAth/learning-ruby/assets/131443621/b8f5e8fe-5d86-437f-98c4-4b28c20b20e7">
+
+65. Numberクラスを継承したMyNumberクラスを実装してください<br>
+    MyNumberクラスは以下の仕様を満たしてください
+
+    仕様1<br>
+    MyNumberクラスは以下のインスタンスメソッドを持ちます
+
+    ultimate_addメソッド<br>
+    このメソッドは引数としてNumberクラスのインスタンスを受け取ります<br>
+    返り値は「自身の@num」 と「引数のインスタンスの@num」と999を足した値を@numに持つ、新しいMyNumberクラスのインスタンスを返します
+
+    clearメソッド<br>
+    @num を0にします 
+
+## プログラム
+```ruby
+class Number
+    def initialize(num)
+        @num = num
+    end
+
+    def num
+        @num
+    end
+
+    def add(instance)
+        newNum = @num + instance.num
+        Number.new(newNum)
+    end
+
+    def sub(instance)
+        newNum = @num - instance.num
+        Number.new(newNum)
+    end
+end
+
+class MyNumber < Number
+    def ultimate_add(instance)
+        newNum = @num + instance.num + 999
+        Number.new(newNum)
+    end
+
+    def clear
+        @num = 0
+    end
+end
+
+a = Number.new(3)
+b = MyNumber.new(5)
+c = MyNumber.new(10)
+d = c.ultimate_add(a)
+b.clear
+puts d.num 
+puts b.num
+```
+## 結果
+<img width="483" alt="スクリーンショット 2023-07-21 16 19 04" src="https://github.com/HATAth/learning-ruby/assets/131443621/1bbb2ad7-2b17-4856-85a6-782b13903b48">
