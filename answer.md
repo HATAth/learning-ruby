@@ -1254,3 +1254,75 @@ end
 
 ## 結果
 <img width="742" alt="スクリーンショット 2023-07-24 16 48 38" src="https://github.com/HATAth/learning-ruby/assets/131443621/1a0f2733-8af7-4539-a046-df4436b4b419">
+
+73. exercise4.rb を実行する際に、posts という追加の引数を取るように修正してください<br>
+    そしてexercise4.rbがpostsという引数と共に実行される時は room IDも引数として受け取るように修正してください<br>
+    exercise4.rb がpostsとroom IDと共に実行された場合は「投稿一覧の表示」のみを行うように修正してください
+
+
+    修正後の実行例<br>
+    ruby exercise4.rb posts hogehoge
+
+    参考資料
+    https://uxmilk.jp/12947
+
+## プログラム
+```ruby
+# 標準ライブラリであるjsonをrequire
+require 'json'
+
+# 外部ライブラリであるfaradayをrequire
+require 'faraday'
+
+# faradayを使って https://next-chat-kohl.vercel.app/api/room_ids にGETメソッドでリクエストを送信
+response = Faraday.get("https://next-chat-kohl.vercel.app/api/room_ids")
+
+# response.bodyにレスポンスが入っている
+# response.bodyはJSON文字列なので、JSON.parseで文字列からrubyのハッシュに変換する
+room_ids = JSON.parse(response.body)
+
+#求めたハッシュroom_idsのキーroomIdsに対応する部屋の数を求める
+numOfRooms = room_ids["roomIds"].size
+
+ 
+#それぞれの部屋の投稿をrubyのhashに変換し、配列postsに追加していく
+posts = []
+for i in 1..numOfRooms
+    responsePost = Faraday.get("https://next-chat-kohl.vercel.app/api/posts?room_id=room-#{i}")
+    posts.push(JSON.parse(responsePost.body))
+end
+
+
+
+#コマンドに渡された引数で、表示するフォーマットを指定するフラグの値を決める
+if ARGV[0] == "rooms"
+    formatFlag = 1
+elsif ARGV[0] == "posts"
+    formatFlag = 2
+    for i in 1..numOfRooms
+        if "room-#{i}" == ARGV[1]
+            putPostRoom = i
+        end
+    end
+else
+    formatFlag = 0
+end
+
+case formatFlag
+when 0 then
+    #部屋の一覧を表示
+    puts room_ids
+    #得た各部屋の投稿をそれぞれ表示
+    posts.each do |post|
+        puts post
+    end
+when 1 then
+    puts room_ids
+when 2 then
+    #コマンドに渡された部屋の投稿のみを表示
+    puts posts[putPostRoom - 1]
+end
+```
+
+## 結果
+<img width="760" alt="スクリーンショット 2023-07-24 17 18 42" src="https://github.com/HATAth/learning-ruby/assets/131443621/d315072d-e62d-434a-9006-087d35b3e8e7">
