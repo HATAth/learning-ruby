@@ -1310,19 +1310,19 @@ end
 
 case formatFlag
 when 0 then
-    #部屋の一覧を表示
-    puts room_ids
-    #得た各部屋の投稿をそれぞれ表示
-    posts.each do |post|
-        puts post
-    end
+    #何もせず終了
+    return
 when 1 then
+    #部屋の一覧を表示
     puts room_ids
 when 2 then
     #コマンドに渡された部屋の投稿のみを表示
     puts posts[putPostRoom - 1]
 end
+   
 ```
 
 ## 結果
-<img width="760" alt="スクリーンショット 2023-07-24 17 18 42" src="https://github.com/HATAth/learning-ruby/assets/131443621/d315072d-e62d-434a-9006-087d35b3e8e7">
+<img width="733" alt="スクリーンショット 2023-07-24 17 27 38" src="https://github.com/HATAth/learning-ruby/assets/131443621/70906334-9cbe-4b49-aae5-1f0ce698d589">
+
+
