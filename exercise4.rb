@@ -23,6 +23,9 @@ for i in 1..numOfRooms
 end
 
 #得た各部屋の投稿をそれぞれ表示
-posts.each do |post|
-    puts post
+#コマンドに渡された引数が"rooms"ならばこの部分は実行しない
+if ARGV[0] != "rooms"
+    posts.each do |post|
+        puts post
+    end
 end
