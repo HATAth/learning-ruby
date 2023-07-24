@@ -40,13 +40,10 @@ end
 
 case formatFlag
 when 0 then
-    #部屋の一覧を表示
-    puts room_ids
-    #得た各部屋の投稿をそれぞれ表示
-    posts.each do |post|
-        puts post
-    end
+    #何もせず終了
+    return
 when 1 then
+    #部屋の一覧を表示
     puts room_ids
 when 2 then
     #コマンドに渡された部屋の投稿のみを表示
