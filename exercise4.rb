@@ -1,64 +1,30 @@
+# コマンドに渡された引数が無い場合、プログラムを終了する
+if ARGV[0] == ""
+    exit
+end
+
 # 標準ライブラリであるjsonをrequire
 require 'json'
 
 # 外部ライブラリであるfaradayをrequire
 require 'faraday'
 
-# faradayを使って https://next-chat-kohl.vercel.app/api/room_ids にGETメソッドでリクエストを送信
-response = Faraday.get("https://next-chat-kohl.vercel.app/api/room_ids")
-
-# response.bodyにレスポンスが入っている
-# response.bodyはJSON文字列なので、JSON.parseで文字列からrubyのハッシュに変換する
-room_ids = JSON.parse(response.body)
-
-#求めたハッシュroom_idsのキーroomIdsに対応する部屋の数を求める
-numOfRooms = room_ids["roomIds"].size
-
- 
-#それぞれの部屋の投稿をrubyのhashに変換し、配列postsに追加していく
-posts = []
-for i in 1..numOfRooms
-    responsePost = Faraday.get("https://next-chat-kohl.vercel.app/api/posts?room_id=room-#{i}")
-    posts.push(JSON.parse(responsePost.body))
-end
-
-
-
-#コマンドに渡された引数で、表示するフォーマットを指定するフラグの値を決める
-if ARGV[0] == "rooms"
-    formatFlag = 1
-elsif ARGV[0] == "posts"
-    formatFlag = 2
-    for i in 1..numOfRooms
-        if "room-#{i}" == ARGV[1]
-            putPostRoom = i
-        end
-    end
-elsif ARGV[0] == "submit-post"
-    formatFlag = 3
-    for i in 1..numOfRooms
-        if "room-#{i}" == ARGV[1]
-            postRoom = i
-        end
-    postContent = ARGV[2]
-    end
-else
-    formatFlag = 0
-end
-
-case formatFlag
-when 0 then
-    #何もせず終了
-    return
-when 1 then
+case ARGV[0]
+when "rooms" then
     #部屋の一覧を表示
+    # faradayを使って https://next-chat-kohl.vercel.app/api/room_ids にGETメソッドでリクエストを送信
+    response = Faraday.get("https://next-chat-kohl.vercel.app/api/room_ids")
+    # response.bodyにレスポンスが入っている
+    # response.bodyはJSON文字列なので、JSON.parseで文字列からrubyのハッシュに変換する
+    room_ids = JSON.parse(response.body)
     puts room_ids
-when 2 then
+when "posts" then
     #コマンドに渡された部屋の投稿のみを表示
-    puts posts[putPostRoom - 1]
-when 3 then
+    responsePost = Faraday.get("https://next-chat-kohl.vercel.app/api/posts?room_id=#{ARGV[1]}")
+    puts JSON.parse(responsePost.body)
+when "submit-post" then
     #コマンドで指定した部屋に書き込む
-    requestBody = {"roomId": ARGV[1], "content": postContent}
+    requestBody = {"roomId": ARGV[1], "content": ARGV[2]}
     response = Faraday.post("https://next-chat-kohl.vercel.app/api/posts", requestBody.to_json, "Content-Type" => "application/json")
 end
    
