@@ -34,6 +34,14 @@ elsif ARGV[0] == "posts"
             putPostRoom = i
         end
     end
+elsif ARGV[0] == "submit-post"
+    formatFlag = 3
+    for i in 1..numOfRooms
+        if "room-#{i}" == ARGV[1]
+            postRoom = i
+        end
+    postContent = ARGV[2]
+    end
 else
     formatFlag = 0
 end
@@ -48,5 +56,9 @@ when 1 then
 when 2 then
     #コマンドに渡された部屋の投稿のみを表示
     puts posts[putPostRoom - 1]
+when 3 then
+    #コマンドで指定した部屋に書き込む
+    requestBody = {"roomId": ARGV[1], "content": postContent}
+    response = Faraday.post("https://next-chat-kohl.vercel.app/api/posts", requestBody.to_json, "Content-Type" => "application/json")
 end
    
